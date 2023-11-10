@@ -2,8 +2,14 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from '../components/App';
 
-test('renders learn react link', () => {
+test('renders page title', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const title = screen.getByText(/LBLS/i);
+  expect(title).toBeInTheDocument();
 });
+
+test('renders an image', () => {
+  const {getByRole} = render(<App />);
+  const image = getByRole('img');
+  expect(image).toBeInTheDocument();
+})

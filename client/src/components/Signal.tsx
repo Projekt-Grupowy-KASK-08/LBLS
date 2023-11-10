@@ -7,3 +7,5 @@ function Signal() {
      </div>
   )
 }
+
+export default Signal;

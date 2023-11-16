@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import { getMockData } from "../mocks/repository";
+import "../styles/Signal.css"
 
 function Signal() {
+
+  let [signalData, setSignalData] = useState(getMockData());
+
+
   return (
      <div className="Signal">
-      Signal visualization goes here
+      {signalData.map((e, _) => {
+        return <p> {e} | </p>
+      })}
      </div>
   )
 }

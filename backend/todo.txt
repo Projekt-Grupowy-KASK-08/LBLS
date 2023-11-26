@@ -1,0 +1,23 @@
+1)Coś do wczytywania MerData do bazy danych
+
+2)merdata chyba powinno mieć pola:
+    -id
+    -data_ch1
+    -data_ch2
+    -ch1_path
+    -ch2_path
+
+3)Wtedy do label trzeba by też dorobić jakąś informacje czy tyczy się ch1 czy ch2
+
+4)Zrobić skrypt do wypierdalania z danych stim i trg - chyba to są jakieś useless dane, cały plik 1 lub 0
+
+5)Coś żeby trwale trackować które dane były już oznaczone, żeby nie dawać w kółko tego samego do oceniania - np. jakaś tabela user z jedną krotką gdzie będzie id merdata na którym user skończył
+
+6)Zrobić skrypt który na podstawie bazy danych tnie dane i przerzuca do odpowiednich folderów
+
+7)Jakieś security na te endpointy
+
+//Nie wiem czy robimy userów czy poprostu będą jedne dane do logowania z których może korzystać x osób wspólnie
+
+Baza danych:
+

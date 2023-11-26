@@ -28,18 +28,26 @@ public class MerDataDefaultController implements MerDataController {
         if (merData == null)
             throw new RuntimeException("MerData id not found - " + merDataId);
 
-        String[] data = new String(merData.getData(), StandardCharsets.UTF_8)
+        String[] dataCh1 = new String(merData.getDataCh1(), StandardCharsets.UTF_8)
                 .split("\\n");
 
-        Double[] numericalData = new Double[data.length];
+        String[] dataCh2 = new String(merData.getDataCh2(), StandardCharsets.UTF_8)
+                .split("\\n");
 
-        for (int i = 0; i < data.length; i++) {
-            numericalData[i] = Double.parseDouble(data[i]);
+        Double[] numericalDataCh1 = new Double[dataCh1.length];
+        Double[] numericalDataCh2 = new Double[dataCh2.length];
+
+        for (int i = 0; i < dataCh1.length; i++)
+            numericalDataCh1[i] = Double.parseDouble(dataCh1[i]);
+
+        for (int i = 0; i < dataCh2.length; i++) {
+            numericalDataCh2[i] = Double.parseDouble(dataCh2[i]);
         }
 
         return new MerDataResponse(
                 merData.getId(),
-                numericalData
+                numericalDataCh1,
+                numericalDataCh2
                 );
     }
 }

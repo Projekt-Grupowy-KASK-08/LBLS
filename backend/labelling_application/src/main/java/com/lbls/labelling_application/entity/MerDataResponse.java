@@ -14,5 +14,7 @@ public class MerDataResponse {
 
     private long id;
 
-    private Double[] data;
+    private Double[] dataCh1;
+
+    private Double[] dataCh2;
 }

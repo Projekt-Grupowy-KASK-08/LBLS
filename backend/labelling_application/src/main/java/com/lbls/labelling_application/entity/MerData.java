@@ -19,6 +19,10 @@ public class MerData {
     private Long id;
 
     @Lob
-    @Column(name="data")
-    private byte[] data;
+    @Column(name="data_ch1")
+    private byte[] dataCh1;
+
+    @Lob
+    @Column(name="data_ch2")
+    private byte[] dataCh2;
 }

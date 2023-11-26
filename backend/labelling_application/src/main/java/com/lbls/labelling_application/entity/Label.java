@@ -27,6 +27,9 @@ public class Label {
     @Column(name="label_end")
     private int labelEnd;
 
+    @Column(name="channel")
+    private int channel;
+
     @Column(name="mer_data_id")
     private long merDataId;
 }

@@ -2,12 +2,9 @@ import React, { useState } from 'react';
 import '../styles/App.css';
 import imgPG from '../images/logo.png';
 import ProgressBarComponent from './ProgressBarComponent';
-import '../styles/Plot.css';
 import '../styles/ListOfPlots.css';
 import '../styles/Footer.css';
-import '../styles/Choice.css';
 import InfiniteScrollComponent from './InfiniteScrollComponent';
-import ChoiceButtons from './ChoiceButtons';
 import Signal from './signal/Signal';
 
 function App() {
@@ -30,10 +27,7 @@ function App() {
       <div className="logo">
         <img src={imgPG} height="80" style={{ right: "2%", top: "5%", position: "absolute" }} alt="Politechnika Gdańska" />
       </div>
-      <div className="Choice">
-        <ChoiceButtons />
-      </div>
-      <div className="Plot">
+      <div>
         <Signal />
       </div>
       <div className="ListOfPlots">

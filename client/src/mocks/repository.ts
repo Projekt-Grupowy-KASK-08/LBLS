@@ -8,7 +8,7 @@ const generateMockData = (records: number, min: number = -100, max: number = 100
 }
 
 const getMockData = (): Data.SignalData => {
-  return generateMockData(10);
+  return generateMockData(100);
 }
 
 export {

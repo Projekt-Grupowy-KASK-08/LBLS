@@ -8,9 +8,10 @@ import '../styles/Footer.css';
 import '../styles/Choice.css';
 import InfiniteScrollComponent from './InfiniteScrollComponent';
 import ChoiceButtons from './ChoiceButtons';
+import Signal from './signal/Signal';
 
 function App() {
-  const [value] = useState(75);
+  const [value, setValue] = useState(75);
   const [dataSource, setDataSource] = useState<number[][]>([Array.from({ length: 30 })]);
   const [hasMore, setHasMore] = useState<boolean>(true);
 
@@ -33,7 +34,7 @@ function App() {
         <ChoiceButtons />
       </div>
       <div className="Plot">
-        PLOT
+        <Signal />
       </div>
       <div className="ListOfPlots">
         <p>Wybierz wykres</p>

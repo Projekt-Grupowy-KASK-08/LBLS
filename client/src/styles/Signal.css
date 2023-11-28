@@ -1,0 +1,13 @@
+.Signal {
+  display: flex;
+  flex-direction: row;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.Signal canvas {
+  color: black;
+}

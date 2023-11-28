@@ -1,0 +1,11 @@
+.ListOfPlots {
+    background-color: rgb(27, 27, 33);
+    width: 20%;
+    height:70%;
+    margin: 0 auto;
+    position: absolute;
+    top: 20%;
+    left: 2%;
+    border-radius: 25px;
+    text-align: center;
+  }

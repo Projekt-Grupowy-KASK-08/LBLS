@@ -1,46 +1,45 @@
 import sys
 import os
-import numpy as np
-import mysql.connector
-
+import psycopg2
 
 def main():
     path = sys.argv[1]
     filePaths = get_file_list(path)
-    connection = mysql.connector.connect(
-            host="127.0.0.1",
-            user="root",
-            password="password",
-            database="lbls"
-        )
     
+
+    db_params = {
+        'host': 'dpg-clj14qfjc5ks739c93g0-a.frankfurt-postgres.render.com',
+        'database': 'lbls',
+        'user': 'root',
+        'password': 'laHppF8JhJxKvVuaLVQMcyXp25qwS2OW',
+        'port': '5432', 
+        'sslmode': 'require'
+    }
+
+    connection = psycopg2.connect(**db_params)
     cursor = connection.cursor()
 
     for i in range(0, len(filePaths), 2):
-        filePath_ch1 = path + "/" + filePaths[i]
-        filePath_ch2 = path + "/" + filePaths[i + 1] if i + 1 < len(filePaths) else None
-        if filePath_ch2 == None:
+        filePath_ch1 = os.path.join(path, filePaths[i])
+        filePath_ch2 = os.path.join(path, filePaths[i + 1]) if i + 1 < len(filePaths) else None
+        if filePath_ch2 is None:
             break
-        insertFileToDatabase(connection, cursor, filePath_ch1, filePath_ch2)
-
+        insert_file_to_database(connection, cursor, filePath_ch1, filePath_ch2)
+    
     if cursor:
-        cursor.close()
+            cursor.close()
 
-    if connection.is_connected():
+    if connection:
         connection.close()
-
-
+        
 
 def get_file_list(directory):
     contents = os.listdir(directory)
-    files = []
-    for e in contents:
-        if (os.path.isfile(os.path.join(directory, e))):
-            files.append(e)
+    files = [e for e in contents if os.path.isfile(os.path.join(directory, e))]
     return files
 
 
-def insertFileToDatabase(connection, cursor, filePath_ch1, filePath_ch2):
+def insert_file_to_database(connection, cursor, filePath_ch1, filePath_ch2):
     try:
         # Read data from file 1
         with open(filePath_ch1, 'rb') as file_ch1:
@@ -59,8 +58,9 @@ def insertFileToDatabase(connection, cursor, filePath_ch1, filePath_ch2):
 
         print("Files inserted into the database successfully!")
 
-    except mysql.connector.Error as err:
+    except psycopg2.Error as err:
         print(f"Error: {err}")
 
 
-main()
+if __name__ == "__main__":
+    main()

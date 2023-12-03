@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public interface LabelController {
 
-    @GetMapping("/labels/{labelId}")
+    @GetMapping("/labels/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Label getLabel(@PathVariable Long labelId);
+    public Label getLabel(@PathVariable String id);
 
     @PutMapping("/labels")
     @ResponseStatus(HttpStatus.CREATED)
     public Label putLabel(@RequestBody Label label);
 
-    @DeleteMapping("/labels/{labelId}")
+    @DeleteMapping("/labels/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public String deleteLabel(@PathVariable Long labelId);
+    public String deleteLabel(@PathVariable String id);
 
 
 }

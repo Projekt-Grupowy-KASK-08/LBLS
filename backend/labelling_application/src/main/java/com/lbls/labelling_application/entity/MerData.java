@@ -3,6 +3,7 @@ package com.lbls.labelling_application.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Type;
 
 @Getter
 @Setter
@@ -15,14 +16,19 @@ public class MerData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
-    private Long id;
+    @Column(name = "id")
+    private int id;
 
-    @Lob
-    @Column(name="data_ch1")
-    private byte[] dataCh1;
+    @Column(name = "data_ch1")
+    private String dataCh1;
 
-    @Lob
-    @Column(name="data_ch2")
-    private byte[] dataCh2;
+    @Column(name = "data_ch2")
+    private String dataCh2;
+
+    @Column(name = "path_ch1")
+    private String pathCh1;
+
+    @Column(name = "path_ch2")
+    private String pathCh2;
+
 }

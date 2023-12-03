@@ -4,9 +4,9 @@ import com.lbls.labelling_application.entity.Label;
 
 public interface LabelService {
 
-    Label findById(Long id);
+    Label findById(int id);
 
     Label save(Label label);
 
-    void deleteById(Long id);
+    void deleteById(int id);
 }

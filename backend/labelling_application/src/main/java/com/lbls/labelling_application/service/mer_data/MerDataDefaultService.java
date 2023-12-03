@@ -6,6 +6,7 @@ import com.lbls.labelling_application.repository.MerDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Type;
 import java.util.Optional;
 
 @Service
@@ -24,7 +25,7 @@ public class MerDataDefaultService implements MerDataService{
     }
 
     @Override
-    public MerData findById(Long id) {
+    public MerData findById(int id) {
         Optional<MerData> merData = merDataRepository.findById(id);
         if(merData.isPresent())
             return merData.get();

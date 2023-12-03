@@ -2,8 +2,8 @@
 -- Create the MERData table
 CREATE TABLE mer_data (
     id SERIAL PRIMARY KEY,
-    data_ch1 BYTEA,
-    data_ch2 BYTEA,
+    data_ch1 VARCHAR,
+    data_ch2 VARCHAR,
     path_ch1 VARCHAR(255),
     path_ch2 VARCHAR(255)
 );

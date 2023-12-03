@@ -12,7 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class MerDataResponse {
 
-    private long id;
+    private int id;
 
     private Double[] dataCh1;
 

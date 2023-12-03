@@ -16,7 +16,7 @@ public class Label {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private Long id;
+    private int id;
 
     @Column(name="label")
     private String label;
@@ -31,5 +31,5 @@ public class Label {
     private int channel;
 
     @Column(name="mer_data_id")
-    private long merDataId;
+    private int merDataId;
 }

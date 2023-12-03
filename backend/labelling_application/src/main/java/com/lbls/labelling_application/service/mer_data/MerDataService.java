@@ -6,5 +6,5 @@ public interface MerDataService {
 
     MerData save(MerData merData);
 
-    MerData findById(Long id);
+    MerData findById(int id);
 }

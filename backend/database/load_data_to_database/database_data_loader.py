@@ -42,11 +42,11 @@ def get_file_list(directory):
 def insert_file_to_database(connection, cursor, filePath_ch1, filePath_ch2):
     try:
         # Read data from file 1
-        with open(filePath_ch1, 'rb') as file_ch1:
+        with open(filePath_ch1, 'r') as file_ch1:
             data_ch1 = file_ch1.read()
 
         # Read data from file 2
-        with open(filePath_ch2, 'rb') as file_ch2:
+        with open(filePath_ch2, 'r') as file_ch2:
             data_ch2 = file_ch2.read()
 
         # Insert data into the database

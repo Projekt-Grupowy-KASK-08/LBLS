@@ -16,7 +16,8 @@ public class LabelDefaultController implements LabelController{
     }
 
     @Override
-    public Label getLabel(Long labelId) {
+    public Label getLabel(String id) {
+        int labelId = Integer.parseInt(id);
         Label label = labelService.findById(labelId);
         if (label == null)
             throw new RuntimeException("Label id not found - " + labelId);
@@ -29,7 +30,8 @@ public class LabelDefaultController implements LabelController{
     }
 
     @Override
-    public String deleteLabel(Long labelId) {
+    public String deleteLabel(String id) {
+        int labelId = Integer.parseInt(id);
         Label tempLabel = labelService.findById(labelId);
         if(tempLabel == null)
             throw new RuntimeException("Label id not found - " + labelId);

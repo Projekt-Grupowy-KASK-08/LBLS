@@ -20,7 +20,7 @@ public class LabelDefaultService implements LabelService{
 
 
     @Override
-    public Label findById(Long id) {
+    public Label findById(int id) {
         Optional<Label> label = labelRepository.findById(id);
         if(label.isPresent())
             return label.get();
@@ -34,7 +34,7 @@ public class LabelDefaultService implements LabelService{
     }
 
     @Override
-    public void deleteById(Long id) {
+    public void deleteById(int id) {
         labelRepository.deleteById(id);
     }
 }

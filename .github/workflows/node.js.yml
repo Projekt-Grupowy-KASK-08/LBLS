@@ -1,0 +1,23 @@
+# A CI workflow for client application
+name: Run client application tests
+on: [pull_request]
+jobs:
+  build:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+        - name: Check out repository code
+          uses: actions/checkout@v2
+       
+        - name: Use Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: 16
+       
+        - name: Install dependencies
+          run: npm ci
+          working-directory: ./client
+       
+        - name: Run tests
+          run: npm test
+          working-directory: ./client
